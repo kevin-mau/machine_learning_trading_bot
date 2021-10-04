@@ -8,11 +8,11 @@ with machine learning algorithms that can adapt to new data and evolving markets
 
 In this Jupyter notebook, we’ll do the following:
 
-Implement an algorithmic trading strategy that uses machine learning to automate the trade decisions.
+  * Implement an algorithmic trading strategy that uses machine learning to automate the trade decisions.
 
-Adjust the input parameters to optimize the trading algorithm.
+  * Adjust the input parameters to optimize the trading algorithm.
 
-Train a new machine learning model and compare its performance to that of a baseline model.
+  * Train a new machine learning model and compare its performance to that of a baseline model.
 
 We will also create a report that compares the performance of the machine learning models based on the trading predictions that each makes and the
 resulting cumulative strategy returns.
