@@ -83,7 +83,7 @@ We will also use a second machine learning model.  To try and get more accuracy 
 
 * Baseline LR Model Cumulative Return Plot:
 
-![baseline_lr_return_plot](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/baseline_lr_return_plot.jpgG?raw=true)
+![baseline_lr_return_plot](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/baseline_lr_return_plot.jpg?raw=true)
 
 * Shorter window LR Model Cumulative Return Plot:
 
