@@ -2,8 +2,8 @@
 
 ## Overview
 
-Machine trading is advantageous because of its speed but people still need to specifically program these systems, which limits their ability to adapt
-to new data. In this project, we will attempt to improve an existing algorithmic trading systems. To do so, we’ll enhance the existing trading signals
+Machine trading is advantageous because of its speed but people still need to specifically program these systems which limits their ability to adapt
+to new data. In this project we will attempt to improve an existing algorithmic trading systems. To do so we’ll enhance the existing trading signals
 with machine learning algorithms that can adapt to new data and evolving markets.
 
 In this Jupyter notebook, we’ll do the following:
@@ -19,9 +19,12 @@ resulting cumulative strategy returns.
 
 ## Process
 
-We will use a dataset of historical lending activity from a peer-to-peer lending services company to build these models.  The goal of building 
-these models is so that we can identify the creditworthiness of borrowers.  The creditworthiness will be signified by a value of `0` in the 
-`loan_status` column, meaning that the loan is healthy.  A value of `1` means that the loan has a high risk of defaulting.
+We will use a historical OHLCV market dataset in a CSV file and read into a dataframe.  Now that it is in the dataframe, we will locate the `close` 
+column create a new `Actual Returns` column which is the percent change of the `close` column.  With just these columns in a new dataframe, we can
+add signals of the rolling average.  We will generate the trading signals using short- and long-window SMA values with the baseline model set at 4 as 
+the short window and 100 as the long window.
+
+
 
 To build the model, first we take the CSV dataset and put it into a dataframe.  We will split the dataframe with `y` being the `loan_status` column, 
 and `X` dataframe as the remaining columns.  Here we use the `value_counts` function to show us the amount of healthy loans in the dataset versus
