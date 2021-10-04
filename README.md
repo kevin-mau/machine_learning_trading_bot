@@ -58,40 +58,43 @@ We will also use a second machine learning model.  To try and get more accuracy 
 ## Results
 
 * Baseline SVC Model Classification Report:
+
 ![baseline_svm_classification_report](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/baseline_svm_classification_report.jpg?raw=true)
 
 * Shorter window SVC Model Classification Report:
+
 ![shorter_svm_classification_report](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/shorter_svm_classification_report.jpg?raw=true)
 
 * Baseline LR Model Classification Report:
+
 ![baseline_lr_classification_report](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/baseline_lr_classification_report.jpg?raw=true)
 
 * Shorter window LR Model Classification Report:
+
 ![shorter_lr_classification_report](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/shorter_lr_classification_report.jpg?raw=true)
 
 * Baseline SVC Model Cumulative Return Plot:
+
 ![baseline_svm_return_plot](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/baseline_svm_return_plot.jpg?raw=true)
 
 * Shorter window SVC Model Cumulative Return Plot:
+
 ![shorter_svm_return_plot](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/shorter_svm_return_plot.jpg?raw=true)
 
 * Baseline LR Model Cumulative Return Plot:
+
 ![baseline_lr_return_plot](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/baseline_lr_return_plot.jpgG?raw=true)
 
 * Shorter window LR Model Cumulative Return Plot:
+
 ![shorter_lr_return_plot](https://github.com/kevin-mau/machine_learning_trading_bot/blob/main/Resources/shorter_lr_return_plot.jpg?raw=true)
 
 
 
 ## Summary
 
-According to the balanced accuracy score, model 2 would be the better model.  The performance is not the only factor to weigh on as it is more important
-for us to predict the value of `1`, the high-risk loan.  In random oversampling, we randomly select instances of the risky loans class and add them to the
-training set until we’ve balanced the majority (healthy loans) and minority classes (high-risk loans).  Since it artificially increases the number of instances
-in the minority class, it increases the frequency of the `1` values.  That trains the model to tend to correctly predict all the true `1` values (to have much
-higher recall at 0.99 vs 0.91). But, this happens at the expense of tending to overestimate the frequency of the `1` values (to have a lower precision at 0.84
-vs 0.85).  Since our model is dealing with risky defaulting loans, the trade-off is justified as it is more important to predict the `1`'s in this case.  In
-summary, as we are trying to build a model that predicts dealing with potential loan defaults, it would be more prudent to go with the oversampled model.
+As the reports show, we can gain a slight 0.01 in accuracy when using a shorter window.  When using the same training and testing datasets, we were able to get more
+accurate results with the SVC classifier model over the LR classification model.
 
 ---
 
