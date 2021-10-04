@@ -22,7 +22,20 @@ resulting cumulative strategy returns.
 We will use a historical OHLCV market dataset in a CSV file and read into a dataframe.  Now that it is in the dataframe, we will locate the `close` 
 column create a new `Actual Returns` column which is the percent change of the `close` column.  With just these columns in a new dataframe, we can
 add signals of the rolling average.  We will generate the trading signals using short- and long-window SMA values with the baseline model set at 4 as 
-the short window and 100 as the long window.
+the short window and 100 as the long window.  We create the new Signal column with the code below:
+```python
+    # Initialize the new Signal column
+    signals_df['Signal'] = 0.0
+
+    # When Actual Returns are greater than or equal to 0, generate signal to buy stock long
+    signals_df.loc[(signals_df['Actual Returns'] >= 0), 'Signal'] = 1
+
+    # When Actual Returns are less than 0, generate signal to sell stock short
+    signals_df.loc[(signals_df['Actual Returns'] < 0), 'Signal'] = -1
+```
+Next, we will split the data into training and testing datasets with `X` as the `SMA_Fast` and the `SMA_Slow` columns and `y` as the `Signal` column.
+With the training and testing datasets ready, we can first try training the baseline model.
+
 
 
 
